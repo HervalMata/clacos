@@ -19,7 +19,12 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
+import User from 'App/Models/user'
 
 Route.get('/', async () => {
-  return { hello: 'world' }
-})
+  User.create({
+    email: "admin@clacos.com.br",
+    password: "123456",
+    type: "admin",
+  });
+});
