@@ -8,6 +8,9 @@ Route.get('/cities/:id/shops', 'CitiesController.shops')
 
 Route.group(() => {
   Route.get('auth/me', 'AuthController.me');
+  Route.resource('/addresses', 'AddressesController').only([
+    'store', 'index', 'update', 'destroy'
+  ])
   Route.put('/client', 'ClientsController.update')
 }).middleware('auth');
 
