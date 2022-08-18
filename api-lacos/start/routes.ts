@@ -15,6 +15,9 @@ Route.group(() => {
   Route.resource('/addresses', 'AddressesController').only([
     'store', 'index', 'update', 'destroy'
   ])
+  Route.post('/orders', 'OrdersController.store')
+  Route.get('/orders', 'OrdersController.index')
+  Route.get('/orders/:hash_id', 'OrdersController.show')
   Route.get('/shop/orders', 'ShopsController.orders')
   Route.put('/client', 'ClientsController.update')
 }).middleware('auth');
